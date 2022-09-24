@@ -72,11 +72,11 @@ namespace RealEstateApi.Controllers
             }
             else
             {
-                var userEmail = UserEmail();
-                var userId = UserId();
+                var userEmail = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+                var user = _dbContext.Users.FirstOrDefault(u => u.Email == userEmail);
                 if (userEmail == null) return NotFound();
                 property.IsTrending = false;
-                property.UserId = userId;
+                property.UserId = user.Id;
                 _dbContext.Properties.Add(property);
                 _dbContext.SaveChanges();
                 return StatusCode(StatusCodes.Status201Created);
@@ -94,17 +94,17 @@ namespace RealEstateApi.Controllers
             }
             else
             {
-                var userEmail = UserEmail();
-                var userId = UserId();
+                var userEmail = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+                var user = _dbContext.Users.FirstOrDefault(u => u.Email == userEmail);
                 if (userEmail == null) return NotFound();
-                if (propertyResult.UserId == userId)
+                if (propertyResult.UserId == user.Id)
                 {
                     propertyResult.Name = property.Name;
                     propertyResult.Detail = property.Detail;
                     propertyResult.Price = property.Price;
                     propertyResult.Address = property.Address;
                     propertyResult.IsTrending = false;
-                    propertyResult.UserId = userId; 
+                    propertyResult.UserId = user.Id; 
 
                     _dbContext.SaveChanges();
                     return Ok("Record update successfully");
@@ -125,10 +125,10 @@ namespace RealEstateApi.Controllers
             }
             else
             {
-                var userEmail = UserEmail();
-                var userId = UserId();
+                var userEmail = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+                var user = _dbContext.Users.FirstOrDefault(u => u.Email == userEmail);
                 if (userEmail == null) return NotFound();
-                if (propertyResult.UserId == userId)
+                if (propertyResult.UserId == user.Id)
                 {
                     _dbContext.Properties.Remove(propertyResult);
                     _dbContext.SaveChanges();
@@ -139,18 +139,7 @@ namespace RealEstateApi.Controllers
 
         }
 
-        private string UserEmail()
-        {
-            var userEmail = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-            var user = _dbContext.Users.FirstOrDefault(u => u.Email == userEmail);
-            return user.Email;
-        }
-
-        private int UserId()
-        {
-            var userEmail = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-            var user = _dbContext.Users.FirstOrDefault(u => u.Email == userEmail);
-            return user.Id;
-        }
+      
+        
     }
 }

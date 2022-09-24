@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Musa\\Documents\\Musa Vs-Projects\\RealEstateApi\\RealEstateApi\\RealEstateApi.csproj": {}
+    "C:\\Users\\Musa\\Documents\\GitHub\\RealEstateApi\\RealEstateApi\\RealEstateApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Musa\\Documents\\Musa Vs-Projects\\RealEstateApi\\RealEstateApi\\RealEstateApi.csproj": {
+    "C:\\Users\\Musa\\Documents\\GitHub\\RealEstateApi\\RealEstateApi\\RealEstateApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Musa\\Documents\\Musa Vs-Projects\\RealEstateApi\\RealEstateApi\\RealEstateApi.csproj",
+        "projectUniqueName": "C:\\Users\\Musa\\Documents\\GitHub\\RealEstateApi\\RealEstateApi\\RealEstateApi.csproj",
         "projectName": "RealEstateApi",
-        "projectPath": "C:\\Users\\Musa\\Documents\\Musa Vs-Projects\\RealEstateApi\\RealEstateApi\\RealEstateApi.csproj",
+        "projectPath": "C:\\Users\\Musa\\Documents\\GitHub\\RealEstateApi\\RealEstateApi\\RealEstateApi.csproj",
         "packagesPath": "C:\\Users\\Musa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Musa\\Documents\\Musa Vs-Projects\\RealEstateApi\\RealEstateApi\\obj\\",
+        "outputPath": "C:\\Users\\Musa\\Documents\\GitHub\\RealEstateApi\\RealEstateApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
