@@ -21,10 +21,12 @@ namespace RealEstateApi.Models
         public bool IsTrending { get; set; }
 
         public int CategoryId { get; set; }
+
         [JsonIgnore]
         public Category Categories { get; set; }
 
         public int UserId { get; set; }
+
         [JsonIgnore]
         public User Users { get; set; }    
 

@@ -6,8 +6,7 @@ namespace RealEstateApi.Data
     public class ApiDbContext : DbContext
     {
 
-
-        public DbSet <Category>Categories { get; set; }
+        public DbSet <Category> Categories { get; set; }
 
         public DbSet <User> Users { get; set; }
 

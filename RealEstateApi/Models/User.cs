@@ -17,7 +17,6 @@ namespace RealEstateApi.Models
         public string Phone { get; set; }
         
 
-
         public ICollection <Property> Properties { get; set; }
     }
 }
